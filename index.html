@@ -433,43 +433,66 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="flex items-center gap-1">
-                                <!-- Share Button -->
-                                <button id="share-btn" class="share-btn flex items-center gap-1 px-2 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-all duration-200" title="Share this lesson">
+                            <div class="flex items-center gap-2">
+                                <!-- Settings Dropdown -->
+                                <div class="relative">
+                                    <button id="settings-btn" class="w-7 h-7 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-full font-medium transition-all duration-200 shadow hover:shadow-gray-500/20 hover:scale-105" title="Settings">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                    </button>
+                                    <!-- Dropdown Menu -->
+                                    <div id="settings-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50">
+                                        <button id="share-btn" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-700 rounded-t-lg transition-colors text-left">
+                                            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                            </svg>
+                                            <span>Share Lesson</span>
+                                        </button>
+                                        <button id="copy-link-btn" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-700 transition-colors text-left">
+                                            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                                            </svg>
+                                            <span>Copy Link</span>
+                                        </button>
+                                        <div class="border-t border-gray-700"></div>
+                                        <button id="keyboard-shortcuts-btn" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-700 rounded-b-lg transition-colors text-left">
+                                            <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                                            </svg>
+                                            <span>Keyboard Shortcuts</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="w-px h-6 bg-gray-600"></div>
+                                
+                                <!-- Hints Button -->
+                                <button id="hints-btn" class="w-7 h-7 flex items-center justify-center bg-yellow-600 hover:bg-yellow-500 rounded-full font-medium transition-all duration-200 shadow hover:shadow-yellow-500/20 hover:scale-105" title="Hints">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                                    </svg>
-                                    <span class="hidden sm:inline text-xs">Share</span>
-                                </button>
-                                <!-- Copy Link Button -->
-                                <button id="copy-link-btn" class="copy-btn flex items-center gap-1 px-2 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-all duration-200" title="Copy lesson link">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-                                    </svg>
-                                    <span class="hidden sm:inline text-xs">Copy</span>
-                                </button>
-                                <!-- Mark Complete Button -->
-                                <button id="mark-complete-btn" class="mark-complete-btn flex items-center gap-1 px-2 py-1.5 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-all duration-200" title="Mark as complete">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="hidden sm:inline text-xs" id="complete-btn-text">Done</span>
-                                </button>
-                                <div class="w-px h-5 bg-gray-600 mx-0.5"></div>
-                                <button id="hints-btn" class="flex items-center gap-2 px-3 py-2 bg-yellow-600 hover:bg-yellow-500 rounded-lg font-medium transition-all duration-200">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                                     </svg>
-                                    <span class="hidden sm:inline">Hints</span>
                                 </button>
-                                <button id="run-code-btn" class="flex items-center gap-2 px-3 py-2 bg-green-600 hover:bg-green-500 rounded-lg font-medium transition-all duration-200">
+                                
+                                <!-- Fix It Button -->
+                                <button id="fix-it-btn" class="w-7 h-7 flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 rounded-full font-medium transition-all duration-200 shadow hover:shadow-purple-500/20 hover:scale-105" title="Fix It - Debug Assistant">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </button>
+                                
+                                <!-- Run Button -->
+                                <button id="run-code-btn" class="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-500 rounded-lg font-medium transition-all duration-200">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
                                     <span class="hidden sm:inline">Run</span>
                                 </button>
-                                <button id="submit-btn" class="flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg font-medium transition-all duration-200">
+                                
+                                <!-- Submit Button -->
+                                <button id="submit-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg font-medium transition-all duration-200">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
@@ -722,6 +745,45 @@
             </div>
         </div>
         
+        <!-- Debug Assistant Modal -->
+        <div id="debug-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+            <div class="theme-transition bg-gray-800 rounded-2xl p-6 w-[600px] max-w-[95vw] border border-gray-700 animate-slide-in max-h-[85vh] overflow-hidden flex flex-col">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Debug Assistant</h3>
+                            <p class="text-sm text-gray-400">AI-powered code analysis & fix</p>
+                        </div>
+                    </div>
+                    <button id="close-debug-btn" class="p-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div id="debug-content" class="flex-1 overflow-y-auto space-y-4">
+                    <!-- Debug analysis will be populated here -->
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-gray-700 flex gap-3">
+                    <button id="apply-fix-btn" class="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 font-medium transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        Apply Fix
+                    </button>
+                    <button id="close-debug-btn-bottom" class="px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 font-medium transition-colors">Close</button>
+                </div>
+            </div>
+        </div>
+        
         <!-- Success Toast -->
         <div id="success-toast" class="fixed bottom-6 right-6 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg hidden animate-slide-in flex items-center gap-3">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -804,6 +866,57 @@
             </div>
         </div>
         
+        <!-- Keyboard Shortcuts Modal -->
+        <div id="shortcuts-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+            <div class="theme-transition bg-gray-800 rounded-2xl p-6 w-96 max-w-[90vw] border border-gray-700 animate-slide-in">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">Keyboard Shortcuts</h3>
+                    <button id="close-shortcuts-btn" class="p-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between py-2 border-b border-gray-700">
+                        <span class="text-gray-300">Run Code</span>
+                        <div class="flex gap-1">
+                            <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">Ctrl</kbd>
+                            <span class="text-gray-500">+</span>
+                            <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">Enter</kbd>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-700">
+                        <span class="text-gray-300">Submit Code</span>
+                        <div class="flex gap-1">
+                            <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">Ctrl</kbd>
+                            <span class="text-gray-500">+</span>
+                            <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">S</kbd>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-700">
+                        <span class="text-gray-300">Previous Lesson</span>
+                        <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">←</kbd>
+                    </div>
+                    <div class="flex items-center justify-between py-2 border-b border-gray-700">
+                        <span class="text-gray-300">Next Lesson</span>
+                        <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">→</kbd>
+                    </div>
+                    <div class="flex items-center justify-between py-2">
+                        <span class="text-gray-300">Toggle Theme</span>
+                        <div class="flex gap-1">
+                            <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">Ctrl</kbd>
+                            <span class="text-gray-500">+</span>
+                            <kbd class="px-2 py-1 bg-gray-700 rounded text-sm font-mono">D</kbd>
+                        </div>
+                    </div>
+                </div>
+                <button id="close-shortcuts-btn-bottom" class="w-full mt-6 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg font-medium transition-colors">
+                    Got it!
+                </button>
+            </div>
+        </div>
+        
         <!-- Giscus Comments Placeholder (Enable when ready) -->
         <!--
         <div id="giscus-comments" class="hidden">
@@ -847,8 +960,8 @@
                 title: 'Variables & Data Types',
                 description: 'Learn how to store and use data in Python',
                 task: 'Create a variable called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">name</code> and assign your name to it (as a string). Then create a variable called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">age</code> with a number.',
-                starterCode: '# Python uses simple variable assignment\n# Strings use quotes, numbers don\'t\n\n# Create your variables below:\nname = ""\nage = 0',
-                solution: /name\s*=\s*["'].+["']\s*\n.*age\s*=\s*\d+/,
+                starterCode: '# Python uses simple variable assignment\n# Strings use quotes, numbers don\'t\n\n# Create your variables below:\n',
+                solution: /name\s*=\s*["'].+["'][\s\S]*age\s*=\s*\d+/,
                 hints: ['Variables in Python are created with: variable_name = value', 'Strings need quotes around them like "John"', 'Numbers don\'t need quotes: age = 25']
             },
             {
@@ -856,7 +969,7 @@
                 title: 'Print Statements & Output',
                 description: 'Display output to the console',
                 task: 'Use the <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">print()</code> function to display "Hello, World!" to the console.',
-                starterCode: '# The print() function displays text to the console\n# Text must be wrapped in quotes\n\n# Print Hello, World! below:\nprint("")',
+                starterCode: '# The print() function displays text to the console\n# Text must be wrapped in quotes\n\n# Print Hello, World! below:\n',
                 solution: /print\s*\(\s*["']Hello,?\s*World!?["']\s*\)/i,
                 hints: ['Use print() with text inside the parentheses', 'The text needs to be in quotes: "Hello, World!"', 'Make sure to match the exact text requested']
             },
@@ -865,8 +978,8 @@
                 title: 'Indentation & Code Structure',
                 description: 'Understand Python\'s unique indentation rules',
                 task: 'Create an if statement that checks if <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">x</code> is greater than 5, and if true, print "Big number". Make sure to use proper indentation.',
-                starterCode: '# Python uses indentation (4 spaces) to define code blocks\n# No curly braces needed!\n\nx = 10\n\n# Write your if statement with proper indentation:\nif x > 5:\n    print("")',
-                solution: /if\s+x\s*>\s*5\s*:\s*\n\s{4}print\s*\(\s*["']Big number["']\s*\)/,
+                starterCode: '# Python uses indentation (4 spaces) to define code blocks\n# No curly braces needed!\n\nx = 10\n\n# Write your if statement with proper indentation:\n',
+                solution: /if\s+x\s*>\s*5\s*:\s*\n\s+print\s*\(\s*["']Big number["']\s*\)/,
                 hints: ['Python uses indentation instead of curly braces', 'Use 4 spaces for each indentation level', 'The colon : is required after the condition']
             },
             {
@@ -874,8 +987,8 @@
                 title: 'If/Else Statements',
                 description: 'Make decisions in your code with conditionals',
                 task: 'Write an if/else statement that checks if <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">score</code> is >= 60. Print "Pass" if true, otherwise print "Fail".',
-                starterCode: '# If/else lets you handle both conditions\n\nscore = 75\n\n# Write your if/else statement:\nif score >= 60:\n    print("")\nelse:\n    print("")',
-                solution: /if\s+score\s*>=\s*60\s*:\s*\n\s+print\s*\(\s*["']Pass["']\s*\)\s*\n\s*else\s*:\s*\n\s+print\s*\(\s*["']Fail["']\s*\)/,
+                starterCode: '# If/else lets you handle both conditions\n\nscore = 75\n\n# Write your if/else statement:\n',
+                solution: /if\s+score\s*>=\s*60\s*:\s*\n\s+print\s*\(\s*["']Pass["']\s*\)[\s\S]*else\s*:\s*\n\s+print\s*\(\s*["']Fail["']\s*\)/,
                 hints: ['Use if condition: for the first check', 'Use else: for the alternative case', 'Both print statements need proper indentation']
             },
             {
@@ -883,7 +996,7 @@
                 title: 'Elif - Multiple Conditions',
                 description: 'Handle multiple conditions with elif',
                 task: 'Create a grading system: if score >= 90 print "A", elif >= 80 print "B", elif >= 70 print "C", else print "F".',
-                starterCode: '# Use elif for multiple conditions\n\nscore = 85\n\n# Create the grading system:\nif score >= 90:\n    print("A")\nelif score >= 80:\n    print("")\nelif score >= 70:\n    print("")\nelse:\n    print("")',
+                starterCode: '# Use elif for multiple conditions\n\nscore = 85\n\n# Create the grading system:\n',
                 solution: /if\s+score\s*>=\s*90[\s\S]*elif\s+score\s*>=\s*80[\s\S]*print\s*\(\s*["']B["']\s*\)[\s\S]*elif\s+score\s*>=\s*70[\s\S]*print\s*\(\s*["']C["']\s*\)[\s\S]*else[\s\S]*print\s*\(\s*["']F["']\s*\)/,
                 hints: ['elif is short for "else if"', 'Order matters - check highest values first', 'else catches everything that didn\'t match']
             },
@@ -892,7 +1005,7 @@
                 title: 'Lists (Arrays)',
                 description: 'Store multiple values in a single variable',
                 task: 'Create a list called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">fruits</code> containing "apple", "banana", and "orange".',
-                starterCode: '# Lists use square brackets []\n# Items are separated by commas\n\n# Create your fruits list:\nfruits = ["", "", ""]',
+                starterCode: '# Lists use square brackets []\n# Items are separated by commas\n\n# Create your fruits list:\n',
                 solution: /fruits\s*=\s*\[.*["']apple["'].*,.*["']banana["'].*,.*["']orange["'].*\]/i,
                 hints: ['Lists use square brackets: []', 'Separate items with commas', 'Each string needs its own quotes']
             },
@@ -901,8 +1014,8 @@
                 title: 'List Methods & Slicing',
                 description: 'Manipulate lists with built-in methods',
                 task: 'Start with the list [1, 2, 3]. Use <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">.append()</code> to add 4, then print the list.',
-                starterCode: '# Lists have many useful methods\n# .append() adds to the end\n\nnumbers = [1, 2, 3]\n\n# Add 4 to the list and print it:\nnumbers.append()\nprint(numbers)',
-                solution: /numbers\.append\s*\(\s*4\s*\)\s*\n\s*print\s*\(\s*numbers\s*\)/,
+                starterCode: '# Lists have many useful methods\n# .append() adds to the end\n\nnumbers = [1, 2, 3]\n\n# Add 4 to the list and print it:\n',
+                solution: /numbers\.append\s*\(\s*4\s*\)[\s\S]*print\s*\(\s*numbers\s*\)/,
                 hints: ['Use .append(value) to add to a list', 'append() adds to the end of the list', 'The value 4 goes inside the parentheses']
             },
             {
@@ -910,8 +1023,8 @@
                 title: 'Dictionaries',
                 description: 'Store key-value pairs',
                 task: 'Create a dictionary called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">person</code> with keys "name" and "age" containing your info.',
-                starterCode: '# Dictionaries use curly braces {}\n# Format: {key: value, key: value}\n\n# Create your person dictionary:\nperson = {\n    "name": "",\n    "age": 0\n}',
-                solution: /person\s*=\s*\{\s*["']name["']\s*:\s*["'].+["']\s*,\s*["']age["']\s*:\s*\d+\s*\}/,
+                starterCode: '# Dictionaries use curly braces {}\n# Format: {key: value, key: value}\n\n# Create your person dictionary:\n',
+                solution: /person\s*=\s*\{[\s\S]*["']name["']\s*:[\s\S]*["']age["']\s*:/,
                 hints: ['Use curly braces {} for dictionaries', 'Keys and values are separated by colons', 'Key-value pairs are separated by commas']
             },
             {
@@ -919,7 +1032,7 @@
                 title: 'For Loops',
                 description: 'Iterate over sequences',
                 task: 'Use a for loop to print each fruit in the list ["apple", "banana", "cherry"].',
-                starterCode: '# For loops iterate over sequences\n\nfruits = ["apple", "banana", "cherry"]\n\n# Print each fruit:\nfor fruit in fruits:\n    print(fruit)',
+                starterCode: '# For loops iterate over sequences\n\nfruits = ["apple", "banana", "cherry"]\n\n# Print each fruit:\n',
                 solution: /for\s+\w+\s+in\s+fruits\s*:\s*\n\s+print\s*\(\s*\w+\s*\)/,
                 hints: ['Use for item in list:', 'The variable name (fruit) can be anything', 'Don\'t forget the colon and indentation']
             },
@@ -928,8 +1041,8 @@
                 title: 'While Loops',
                 description: 'Loop while a condition is true',
                 task: 'Use a while loop to print numbers 1 to 5. Start with count = 1.',
-                starterCode: '# While loops continue until condition is false\n\ncount = 1\n\n# Print 1 to 5:\nwhile count <= 5:\n    print(count)\n    count += 1',
-                solution: /while\s+count\s*<=\s*5\s*:\s*\n\s+print\s*\(\s*count\s*\)\s*\n\s+count\s*\+=\s*1/,
+                starterCode: '# While loops continue until condition is false\n\ncount = 1\n\n# Print 1 to 5:\n',
+                solution: /while\s+count\s*<=\s*5\s*:[\s\S]*print\s*\(\s*count\s*\)[\s\S]*count\s*(\+=\s*1|=\s*count\s*\+\s*1)/,
                 hints: ['While loops need a condition that eventually becomes False', 'Use += 1 to increment the counter', 'Without incrementing, you\'ll have an infinite loop!']
             },
             {
@@ -937,7 +1050,7 @@
                 title: 'Functions',
                 description: 'Create reusable blocks of code',
                 task: 'Define a function called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">greet</code> that takes a name parameter and returns "Hello, " + name.',
-                starterCode: '# Functions are defined with def keyword\n\n# Define your greet function:\ndef greet(name):\n    return "Hello, " + name',
+                starterCode: '# Functions are defined with def keyword\n\n# Define your greet function:\n',
                 solution: /def\s+greet\s*\(\s*name\s*\)\s*:\s*\n\s+return\s+["']Hello,?\s*["']\s*\+\s*name/,
                 hints: ['Use def function_name(parameter):', 'Return values with the return keyword', 'Use + to concatenate strings']
             },
@@ -946,7 +1059,7 @@
                 title: 'Function Parameters & Defaults',
                 description: 'Work with multiple and default parameters',
                 task: 'Create a function <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">power</code> that takes base and exponent (default 2), returns base ** exponent.',
-                starterCode: '# Default parameters have = value\n\n# Create the power function:\ndef power(base, exponent=2):\n    return base ** exponent',
+                starterCode: '# Default parameters have = value\n\n# Create the power function:\n',
                 solution: /def\s+power\s*\(\s*base\s*,\s*exponent\s*=\s*2\s*\)\s*:\s*\n\s+return\s+base\s*\*\*\s*exponent/,
                 hints: ['Default parameters use = in the definition', '** is the exponent operator in Python', 'Default parameters must come after required ones']
             },
@@ -955,7 +1068,7 @@
                 title: 'List Comprehensions',
                 description: 'Create lists in a concise way',
                 task: 'Use a list comprehension to create a list of squares from 1 to 5: [1, 4, 9, 16, 25].',
-                starterCode: '# List comprehensions: [expression for item in iterable]\n\n# Create squares list:\nsquares = [x**2 for x in range(1, 6)]',
+                starterCode: '# List comprehensions: [expression for item in iterable]\n\n# Create squares list:\n',
                 solution: /squares\s*=\s*\[\s*\w+\s*\*\*\s*2\s+for\s+\w+\s+in\s+range\s*\(\s*1\s*,\s*6\s*\)\s*\]/,
                 hints: ['Format: [expression for variable in range()]', 'range(1, 6) gives numbers 1-5', 'x**2 squares each number']
             },
@@ -964,7 +1077,7 @@
                 title: 'Lambda Functions',
                 description: 'Create anonymous inline functions',
                 task: 'Create a lambda function called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">double</code> that takes x and returns x * 2.',
-                starterCode: '# Lambda: lambda arguments: expression\n\n# Create the double lambda:\ndouble = lambda x: x * 2',
+                starterCode: '# Lambda: lambda arguments: expression\n\n# Create the double lambda:\n',
                 solution: /double\s*=\s*lambda\s+x\s*:\s*x\s*\*\s*2/,
                 hints: ['Lambda syntax: lambda args: expression', 'No return keyword needed', 'Great for simple, one-line functions']
             },
@@ -973,7 +1086,7 @@
                 title: 'File I/O - Reading Files',
                 description: 'Read data from text files',
                 task: 'Write code to open "data.txt" in read mode and read its contents into a variable called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">content</code>.',
-                starterCode: '# Use with statement for safe file handling\n\n# Read from file:\nwith open("data.txt", "r") as file:\n    content = file.read()',
+                starterCode: '# Use with statement for safe file handling\n\n# Read from file:\n',
                 solution: /with\s+open\s*\(\s*["']data\.txt["']\s*,\s*["']r["']\s*\)\s*as\s+\w+\s*:\s*\n\s+content\s*=\s*\w+\.read\s*\(\s*\)/,
                 hints: ['Use with open(filename, mode) as variable:', '"r" mode is for reading', '.read() gets all content as a string']
             },
@@ -982,7 +1095,7 @@
                 title: 'File I/O - Writing Files',
                 description: 'Write data to text files',
                 task: 'Write the text "Hello, File!" to a file called "output.txt".',
-                starterCode: '# "w" mode creates/overwrites files\n\n# Write to file:\nwith open("output.txt", "w") as file:\n    file.write("Hello, File!")',
+                starterCode: '# "w" mode creates/overwrites files\n\n# Write to file:\n',
                 solution: /with\s+open\s*\(\s*["']output\.txt["']\s*,\s*["']w["']\s*\)\s*as\s+\w+\s*:\s*\n\s+\w+\.write\s*\(\s*["']Hello,?\s*File!?["']\s*\)/,
                 hints: ['"w" mode writes (and overwrites)', 'Use .write() to write strings', '"a" mode appends instead of overwriting']
             },
@@ -991,8 +1104,8 @@
                 title: 'Classes & Objects',
                 description: 'Create custom types with classes',
                 task: 'Create a class <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">Dog</code> with __init__ that takes name, and a method bark() that returns "Woof!".',
-                starterCode: '# Classes use the class keyword\n\nclass Dog:\n    def __init__(self, name):\n        self.name = name\n    \n    def bark(self):\n        return "Woof!"',
-                solution: /class\s+Dog\s*:\s*\n\s+def\s+__init__\s*\(\s*self\s*,\s*name\s*\)\s*:[\s\S]*self\.name\s*=\s*name[\s\S]*def\s+bark\s*\(\s*self\s*\)\s*:[\s\S]*return\s+["']Woof!?["']/,
+                starterCode: '# Classes use the class keyword\n\n# Create the Dog class:\n',
+                solution: /class\s+Dog\s*:[\s\S]*def\s+__init__\s*\(\s*self\s*,\s*name\s*\)\s*:[\s\S]*self\.name\s*=\s*name[\s\S]*def\s+bark\s*\(\s*self\s*\)\s*:[\s\S]*return\s+["']Woof!?["']/,
                 hints: ['__init__ is the constructor method', 'self refers to the instance', 'All methods must have self as first parameter']
             },
             {
@@ -1000,8 +1113,8 @@
                 title: 'Inheritance',
                 description: 'Create classes that inherit from others',
                 task: 'Create a class <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">Puppy</code> that inherits from Dog and adds a play() method returning "Playing!".',
-                starterCode: '# Inheritance: class Child(Parent)\n\nclass Dog:\n    def bark(self):\n        return "Woof!"\n\nclass Puppy(Dog):\n    def play(self):\n        return "Playing!"',
-                solution: /class\s+Puppy\s*\(\s*Dog\s*\)\s*:\s*\n\s+def\s+play\s*\(\s*self\s*\)\s*:\s*\n\s+return\s+["']Playing!?["']/,
+                starterCode: '# Inheritance: class Child(Parent)\n\nclass Dog:\n    def bark(self):\n        return "Woof!"\n\n# Create the Puppy class:\n',
+                solution: /class\s+Puppy\s*\(\s*Dog\s*\)\s*:[\s\S]*def\s+play\s*\(\s*self\s*\)\s*:[\s\S]*return\s+["']Playing!?["']/,
                 hints: ['Put parent class in parentheses: class Child(Parent)', 'Child classes inherit all parent methods', 'You can add new methods or override existing ones']
             },
             {
@@ -1009,8 +1122,8 @@
                 title: 'Error Handling (Try/Except)',
                 description: 'Handle errors gracefully',
                 task: 'Use try/except to handle a potential ZeroDivisionError. Try 10/0 and print "Cannot divide by zero!" if error occurs.',
-                starterCode: '# Try/except catches errors\n\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero!")',
-                solution: /try\s*:\s*\n\s+result\s*=\s*10\s*\/\s*0\s*\n\s*except\s+ZeroDivisionError\s*:\s*\n\s+print\s*\(\s*["']Cannot divide by zero!?["']\s*\)/,
+                starterCode: '# Try/except catches errors\n\n# Handle the division error:\n',
+                solution: /try\s*:[\s\S]*10\s*\/\s*0[\s\S]*except\s+(ZeroDivisionError|Exception)[\s\S]*print\s*\(\s*["']Cannot divide by zero!?["']\s*\)/,
                 hints: ['Put risky code in the try block', 'Specify the error type after except', 'You can use except Exception to catch all errors']
             },
             {
@@ -1018,8 +1131,8 @@
                 title: 'Decorators',
                 description: 'Modify function behavior with decorators',
                 task: 'Create a decorator <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">uppercase</code> that makes a function\'s string return value uppercase.',
-                starterCode: '# Decorators wrap functions\n\ndef uppercase(func):\n    def wrapper():\n        result = func()\n        return result.upper()\n    return wrapper\n\n@uppercase\ndef greet():\n    return "hello"',
-                solution: /def\s+uppercase\s*\(\s*func\s*\)\s*:\s*\n\s+def\s+wrapper\s*\(\s*\)\s*:[\s\S]*return\s+result\.upper\s*\(\s*\)[\s\S]*return\s+wrapper[\s\S]*@uppercase/,
+                starterCode: '# Decorators wrap functions\n\n# Create the uppercase decorator:\n',
+                solution: /def\s+uppercase\s*\(\s*func\s*\)\s*:[\s\S]*def\s+wrapper[\s\S]*\.upper\s*\(\s*\)[\s\S]*return\s+wrapper[\s\S]*@uppercase/,
                 hints: ['Decorators are functions that take a function', 'The wrapper function calls the original', '@decorator is syntactic sugar for func = decorator(func)']
             }
         ];
@@ -1034,8 +1147,8 @@
                 title: 'Variables: let & const',
                 description: 'Learn the modern way to declare variables',
                 task: 'Create a variable using <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">let</code> called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">name</code> with your name, and a <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">const</code> called <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">age</code> with a number.',
-                starterCode: '// let = can be reassigned\n// const = cannot be reassigned\n\nlet name = "";\nconst age = 0;',
-                solution: /let\s+name\s*=\s*["'].+["']\s*;?\s*\n.*const\s+age\s*=\s*\d+/,
+                starterCode: '// let = can be reassigned\n// const = cannot be reassigned\n\n// Create your variables below:\n',
+                solution: /let\s+name\s*=\s*["'].+["'][\s\S]*const\s+age\s*=\s*\d+/,
                 hints: ['Use let for values that might change', 'Use const for values that won\'t change', 'Strings need quotes, numbers don\'t']
             },
             {
@@ -1043,7 +1156,7 @@
                 title: 'Console Output',
                 description: 'Display output using console.log',
                 task: 'Use <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">console.log()</code> to display "Hello, World!" to the console.',
-                starterCode: '// console.log() outputs to the browser console\n\nconsole.log("");',
+                starterCode: '// console.log() outputs to the browser console\n\n// Log Hello, World! below:\n',
                 solution: /console\.log\s*\(\s*["']Hello,?\s*World!?["']\s*\)/i,
                 hints: ['console.log() is the main output function', 'Text needs quotes around it', 'Check spelling and punctuation']
             },
@@ -1052,8 +1165,8 @@
                 title: 'Basic Math Operations',
                 description: 'Perform arithmetic in JavaScript',
                 task: 'Create a variable <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">sum</code> that adds 10 and 5, then log it.',
-                starterCode: '// JavaScript supports +, -, *, /, %\n\nconst sum = 10 + 5;\nconsole.log(sum);',
-                solution: /const\s+sum\s*=\s*10\s*\+\s*5\s*;?\s*\n.*console\.log\s*\(\s*sum\s*\)/,
+                starterCode: '// JavaScript supports +, -, *, /, %\n\n// Create sum and log it:\n',
+                solution: /(const|let|var)\s+sum\s*=\s*10\s*\+\s*5[\s\S]*console\.log\s*\(\s*sum\s*\)/,
                 hints: ['Use + for addition', 'Store the result in a variable', 'Log the variable, not the equation']
             },
             {
@@ -1061,8 +1174,8 @@
                 title: 'Strings & String Methods',
                 description: 'Work with text data',
                 task: 'Create a string <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">message</code> = "hello" and log it converted to uppercase using .toUpperCase().',
-                starterCode: '// Strings have many built-in methods\n\nconst message = "hello";\nconsole.log(message.toUpperCase());',
-                solution: /const\s+message\s*=\s*["']hello["']\s*;?\s*\n.*console\.log\s*\(\s*message\.toUpperCase\s*\(\s*\)\s*\)/,
+                starterCode: '// Strings have many built-in methods\n\n// Create message and log its uppercase version:\n',
+                solution: /(const|let|var)\s+message\s*=\s*["']hello["'][\s\S]*console\.log\s*\(\s*message\.toUpperCase\s*\(\s*\)\s*\)/,
                 hints: ['.toUpperCase() converts to uppercase', 'The method needs parentheses ()', 'Original string is unchanged']
             },
             {
@@ -1070,8 +1183,8 @@
                 title: 'If/Else Statements',
                 description: 'Make decisions with conditionals',
                 task: 'Write an if/else that checks if <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">score</code> >= 60 and logs "Pass", else logs "Fail".',
-                starterCode: '// Use curly braces {} for code blocks\n\nconst score = 75;\n\nif (score >= 60) {\n    console.log("Pass");\n} else {\n    console.log("Fail");\n}',
-                solution: /if\s*\(\s*score\s*>=\s*60\s*\)\s*\{\s*\n?\s*console\.log\s*\(\s*["']Pass["']\s*\)[\s\S]*\}\s*else\s*\{\s*\n?\s*console\.log\s*\(\s*["']Fail["']\s*\)/,
+                starterCode: '// Use curly braces {} for code blocks\n\nconst score = 75;\n\n// Write your if/else:\n',
+                solution: /if\s*\(\s*score\s*>=\s*60\s*\)[\s\S]*console\.log\s*\(\s*["']Pass["']\s*\)[\s\S]*else[\s\S]*console\.log\s*\(\s*["']Fail["']\s*\)/,
                 hints: ['Condition goes in parentheses ()', 'Use curly braces {} for code blocks', 'else handles the false case']
             },
             {
@@ -1079,8 +1192,8 @@
                 title: 'Arrays',
                 description: 'Store multiple values',
                 task: 'Create an array <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">colors</code> with "red", "green", "blue" and log the first element.',
-                starterCode: '// Arrays use square brackets []\n// Index starts at 0\n\nconst colors = ["red", "green", "blue"];\nconsole.log(colors[0]);',
-                solution: /const\s+colors\s*=\s*\[\s*["']red["']\s*,\s*["']green["']\s*,\s*["']blue["']\s*\]\s*;?\s*\n.*console\.log\s*\(\s*colors\s*\[\s*0\s*\]\s*\)/,
+                starterCode: '// Arrays use square brackets []\n// Index starts at 0\n\n// Create colors array and log first element:\n',
+                solution: /(const|let|var)\s+colors\s*=\s*\[[\s\S]*["']red["'][\s\S]*["']green["'][\s\S]*["']blue["'][\s\S]*\][\s\S]*console\.log\s*\(\s*colors\s*\[\s*0\s*\]\s*\)/,
                 hints: ['Arrays use square brackets []', 'First element is at index 0', 'Access elements with array[index]']
             },
             {
@@ -1088,8 +1201,8 @@
                 title: 'Array Methods',
                 description: 'Manipulate arrays with built-in methods',
                 task: 'Start with [1, 2, 3]. Use <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">.push()</code> to add 4, then log the array.',
-                starterCode: '// .push() adds to the end\n\nconst numbers = [1, 2, 3];\nnumbers.push(4);\nconsole.log(numbers);',
-                solution: /const\s+numbers\s*=\s*\[\s*1\s*,\s*2\s*,\s*3\s*\]\s*;?\s*\n.*numbers\.push\s*\(\s*4\s*\)\s*;?\s*\n.*console\.log\s*\(\s*numbers\s*\)/,
+                starterCode: '// .push() adds to the end\n\nconst numbers = [1, 2, 3];\n\n// Add 4 and log the array:\n',
+                solution: /numbers\.push\s*\(\s*4\s*\)[\s\S]*console\.log\s*\(\s*numbers\s*\)/,
                 hints: ['.push(value) adds to the end', 'The original array is modified', 'const arrays can still be modified']
             },
             {
@@ -1097,8 +1210,8 @@
                 title: 'For Loops',
                 description: 'Repeat actions with loops',
                 task: 'Use a for loop to log numbers 1 through 5.',
-                starterCode: '// for (init; condition; increment)\n\nfor (let i = 1; i <= 5; i++) {\n    console.log(i);\n}',
-                solution: /for\s*\(\s*let\s+\w+\s*=\s*1\s*;\s*\w+\s*<=\s*5\s*;\s*\w+\+\+\s*\)\s*\{\s*\n?\s*console\.log\s*\(\s*\w+\s*\)/,
+                starterCode: '// for (init; condition; increment)\n\n// Log numbers 1 to 5:\n',
+                solution: /for\s*\(\s*(let|var)\s+\w+\s*=\s*1\s*;\s*\w+\s*<=\s*5\s*;\s*\w+\+\+\s*\)[\s\S]*console\.log\s*\(\s*\w+\s*\)/,
                 hints: ['Start from 1: let i = 1', 'Continue while i <= 5', 'Increment with i++']
             },
             {
@@ -1106,8 +1219,8 @@
                 title: 'Functions',
                 description: 'Create reusable code blocks',
                 task: 'Create a function <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">greet</code> that takes name and returns "Hello, " + name.',
-                starterCode: '// function name(params) { }\n\nfunction greet(name) {\n    return "Hello, " + name;\n}',
-                solution: /function\s+greet\s*\(\s*name\s*\)\s*\{\s*\n?\s*return\s+["']Hello,?\s*["']\s*\+\s*name/,
+                starterCode: '// function name(params) { }\n\n// Create the greet function:\n',
+                solution: /function\s+greet\s*\(\s*name\s*\)[\s\S]*return\s+["']Hello,?\s*["']\s*\+\s*name/,
                 hints: ['Use function keyword', 'Parameters go in parentheses', 'return sends back a value']
             },
             {
@@ -1115,8 +1228,8 @@
                 title: 'Arrow Functions',
                 description: 'Modern, concise function syntax',
                 task: 'Convert this to an arrow function: create <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">double</code> that takes x and returns x * 2.',
-                starterCode: '// Arrow function: (params) => expression\n\nconst double = (x) => x * 2;',
-                solution: /const\s+double\s*=\s*\(?\s*x\s*\)?\s*=>\s*x\s*\*\s*2/,
+                starterCode: '// Arrow function: (params) => expression\n\n// Create the double arrow function:\n',
+                solution: /const\s+double\s*=\s*\(?\s*x\s*\)?\s*=>\s*(x\s*\*\s*2|\{\s*return\s+x\s*\*\s*2)/,
                 hints: ['Arrow functions use =>', 'Single expression doesn\'t need return', 'Parentheses optional for single parameter']
             },
             {
@@ -1124,8 +1237,8 @@
                 title: 'Objects',
                 description: 'Store related data together',
                 task: 'Create an object <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">person</code> with name and age properties.',
-                starterCode: '// Objects use curly braces {}\n\nconst person = {\n    name: "John",\n    age: 30\n};',
-                solution: /const\s+person\s*=\s*\{\s*\n?\s*name\s*:\s*["'].+["']\s*,\s*\n?\s*age\s*:\s*\d+\s*\n?\s*\}/,
+                starterCode: '// Objects use curly braces {}\n\n// Create the person object:\n',
+                solution: /(const|let|var)\s+person\s*=\s*\{[\s\S]*name\s*:[\s\S]*age\s*:/,
                 hints: ['Use curly braces {} for objects', 'Properties use key: value format', 'Separate properties with commas']
             },
             {
@@ -1133,8 +1246,8 @@
                 title: 'DOM Manipulation Basics',
                 description: 'Interact with HTML elements',
                 task: 'Use <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">document.getElementById()</code> to get an element with id "title" and store it in a variable.',
-                starterCode: '// DOM = Document Object Model\n\nconst title = document.getElementById("title");',
-                solution: /const\s+\w+\s*=\s*document\.getElementById\s*\(\s*["']title["']\s*\)/,
+                starterCode: '// DOM = Document Object Model\n\n// Get the element with id "title":\n',
+                solution: /(const|let|var)\s+\w+\s*=\s*document\.getElementById\s*\(\s*["']title["']\s*\)/,
                 hints: ['document represents the page', 'getElementById finds by id attribute', 'Returns the element or null']
             },
             {
@@ -1142,8 +1255,8 @@
                 title: 'Event Listeners',
                 description: 'Respond to user actions',
                 task: 'Add a click event listener to a button that logs "Clicked!" when activated.',
-                starterCode: '// .addEventListener(event, handler)\n\nconst button = document.getElementById("btn");\nbutton.addEventListener("click", function() {\n    console.log("Clicked!");\n});',
-                solution: /\.addEventListener\s*\(\s*["']click["']\s*,\s*(function\s*\(\s*\)|[\w]+|\(\s*\)\s*=>)\s*(\{[\s\S]*console\.log\s*\(\s*["']Clicked!?["']\s*\)|console\.log\s*\(\s*["']Clicked!?["']\s*\))/,
+                starterCode: '// .addEventListener(event, handler)\n\nconst button = document.getElementById("btn");\n\n// Add click listener:\n',
+                solution: /\.addEventListener\s*\(\s*["']click["'][\s\S]*console\.log\s*\(\s*["']Clicked!?["']\s*\)/,
                 hints: ['First argument is the event type', 'Second argument is the handler function', 'Common events: click, submit, keydown']
             },
             {
@@ -1151,8 +1264,8 @@
                 title: 'Destructuring',
                 description: 'Extract values elegantly',
                 task: 'Use destructuring to extract name and age from a person object.',
-                starterCode: '// Destructuring: { prop1, prop2 } = object\n\nconst person = { name: "John", age: 30 };\nconst { name, age } = person;',
-                solution: /const\s*\{\s*name\s*,\s*age\s*\}\s*=\s*person/,
+                starterCode: '// Destructuring: { prop1, prop2 } = object\n\nconst person = { name: "John", age: 30 };\n\n// Destructure name and age:\n',
+                solution: /(const|let|var)\s*\{\s*name\s*,\s*age\s*\}\s*=\s*person/,
                 hints: ['Use {} for object destructuring', 'Variable names must match property names', 'Creates separate variables']
             },
             {
@@ -1160,8 +1273,8 @@
                 title: 'Spread & Rest Operators',
                 description: 'Use ... for flexible arrays and objects',
                 task: 'Use the spread operator to combine [1, 2] and [3, 4] into a new array.',
-                starterCode: '// Spread: ...array expands elements\n\nconst arr1 = [1, 2];\nconst arr2 = [3, 4];\nconst combined = [...arr1, ...arr2];',
-                solution: /const\s+combined\s*=\s*\[\s*\.\.\.arr1\s*,\s*\.\.\.arr2\s*\]/,
+                starterCode: '// Spread: ...array expands elements\n\nconst arr1 = [1, 2];\nconst arr2 = [3, 4];\n\n// Combine into new array:\n',
+                solution: /(const|let|var)\s+combined\s*=\s*\[\s*\.\.\.arr1\s*,\s*\.\.\.arr2\s*\]/,
                 hints: ['... spreads array elements', 'Works in array literals []', 'Also works for objects {}']
             },
             {
@@ -1169,8 +1282,8 @@
                 title: 'Promises',
                 description: 'Handle asynchronous operations',
                 task: 'Create a Promise that resolves with "Success!" after the executor runs.',
-                starterCode: '// Promises handle async operations\n\nconst myPromise = new Promise((resolve, reject) => {\n    resolve("Success!");\n});',
-                solution: /new\s+Promise\s*\(\s*\(\s*resolve\s*,?\s*reject?\s*\)\s*=>\s*\{\s*\n?\s*resolve\s*\(\s*["']Success!?["']\s*\)/,
+                starterCode: '// Promises handle async operations\n\n// Create a Promise that resolves with "Success!":\n',
+                solution: /(const|let|var)\s+\w+\s*=\s*new\s+Promise\s*\([\s\S]*resolve\s*\(\s*["']Success!?["']\s*\)/,
                 hints: ['Promise takes an executor function', 'resolve() for success', 'reject() for failure']
             },
             {
@@ -1178,8 +1291,8 @@
                 title: 'Async/Await',
                 description: 'Write cleaner async code',
                 task: 'Create an async function <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">fetchData</code> that awaits a promise and returns its result.',
-                starterCode: '// async/await makes Promises easier\n\nasync function fetchData() {\n    const result = await somePromise;\n    return result;\n}',
-                solution: /async\s+function\s+fetchData\s*\(\s*\)\s*\{\s*\n?\s*const\s+result\s*=\s*await\s+\w+\s*;?\s*\n?\s*return\s+result/,
+                starterCode: '// async/await makes Promises easier\n\nconst somePromise = Promise.resolve("data");\n\n// Create the async function:\n',
+                solution: /async\s+function\s+fetchData\s*\(\s*\)[\s\S]*await[\s\S]*return/,
                 hints: ['async keyword before function', 'await pauses until Promise resolves', 'Must be inside async function']
             },
             {
@@ -1187,8 +1300,8 @@
                 title: 'JSON Parsing',
                 description: 'Work with JSON data',
                 task: 'Parse a JSON string \'{"name":"John"}\' into an object using JSON.parse().',
-                starterCode: '// JSON.parse() converts string to object\n\nconst jsonString = \'{"name":"John"}\';\nconst obj = JSON.parse(jsonString);',
-                solution: /const\s+obj\s*=\s*JSON\.parse\s*\(\s*jsonString\s*\)/,
+                starterCode: '// JSON.parse() converts string to object\n\nconst jsonString = \'{"name":"John"}\';\n\n// Parse it into an object:\n',
+                solution: /(const|let|var)\s+\w+\s*=\s*JSON\.parse\s*\(\s*jsonString\s*\)/,
                 hints: ['JSON.parse() converts string to object', 'JSON.stringify() does the opposite', 'JSON keys must be double-quoted']
             },
             {
@@ -1196,8 +1309,8 @@
                 title: 'Fetch API',
                 description: 'Make HTTP requests',
                 task: 'Use fetch to make a GET request to an API URL and log the response.',
-                starterCode: '// fetch() returns a Promise\n\nfetch("https://api.example.com/data")\n    .then(response => response.json())\n    .then(data => console.log(data));',
-                solution: /fetch\s*\(\s*["']https?:\/\/.+["']\s*\)\s*\n?\s*\.then\s*\(\s*\w+\s*=>\s*\w+\.json\s*\(\s*\)\s*\)\s*\n?\s*\.then/,
+                starterCode: '// fetch() returns a Promise\n\n// Fetch data from an API:\n',
+                solution: /fetch\s*\(\s*["']https?:\/\/[\s\S]*\.then[\s\S]*\.then/,
                 hints: ['fetch() returns a Promise', '.json() parses the response', 'Chain .then() for each step']
             },
             {
@@ -1205,8 +1318,8 @@
                 title: 'LocalStorage',
                 description: 'Store data in the browser',
                 task: 'Save a value "John" with key "username" to localStorage, then retrieve it.',
-                starterCode: '// localStorage persists data\n\nlocalStorage.setItem("username", "John");\nconst user = localStorage.getItem("username");',
-                solution: /localStorage\.setItem\s*\(\s*["']username["']\s*,\s*["']John["']\s*\)\s*;?\s*\n.*localStorage\.getItem\s*\(\s*["']username["']\s*\)/,
+                starterCode: '// localStorage persists data\n\n// Save and retrieve username:\n',
+                solution: /localStorage\.setItem\s*\(\s*["']username["']\s*,\s*["']John["']\s*\)[\s\S]*localStorage\.getItem\s*\(\s*["']username["']\s*\)/,
                 hints: ['setItem(key, value) stores data', 'getItem(key) retrieves data', 'Data persists after browser closes']
             }
         ];
@@ -1221,8 +1334,8 @@
                 title: 'Hello World & Main Method',
                 description: 'Understand Java program structure',
                 task: 'Create the main method and print "Hello, World!" using System.out.println().',
-                starterCode: '// Every Java program needs a main method\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}',
-                solution: /public\s+static\s+void\s+main\s*\(\s*String\s*\[\s*\]\s*args\s*\)\s*\{\s*\n?\s*System\.out\.println\s*\(\s*["']Hello,?\s*World!?["']\s*\)/,
+                starterCode: '// Every Java program needs a main method\n\npublic class Main {\n    // Create the main method and print Hello, World!\n    \n}',
+                solution: /public\s+static\s+void\s+main\s*\(\s*String\s*\[\s*\]\s*\w+\s*\)[\s\S]*System\.out\.println\s*\(\s*["']Hello,?\s*World!?["']\s*\)/,
                 hints: ['main method is the entry point', 'public static void main(String[] args)', 'System.out.println() prints a line']
             },
             {
@@ -1230,8 +1343,8 @@
                 title: 'Data Types',
                 description: 'Learn Java\'s primitive types',
                 task: 'Declare an <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">int</code> called age, a <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">double</code> called price, and a <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">boolean</code> called isActive.',
-                starterCode: '// Java is strongly typed\n\npublic class Main {\n    public static void main(String[] args) {\n        int age = 25;\n        double price = 19.99;\n        boolean isActive = true;\n    }\n}',
-                solution: /int\s+age\s*=\s*\d+\s*;\s*\n\s*double\s+price\s*=\s*[\d.]+\s*;\s*\n\s*boolean\s+isActive\s*=\s*(true|false)\s*;/,
+                starterCode: '// Java is strongly typed\n\npublic class Main {\n    public static void main(String[] args) {\n        // Declare age (int), price (double), isActive (boolean)\n        \n    }\n}',
+                solution: /int\s+age\s*=\s*\d+[\s\S]*double\s+price\s*=\s*[\d.]+[\s\S]*boolean\s+isActive\s*=\s*(true|false)/,
                 hints: ['int for whole numbers', 'double for decimals', 'boolean for true/false']
             },
             {
@@ -1239,8 +1352,8 @@
                 title: 'Strings',
                 description: 'Work with text in Java',
                 task: 'Create a String variable <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">name</code> and print it with a greeting.',
-                starterCode: '// Strings use double quotes\n\npublic class Main {\n    public static void main(String[] args) {\n        String name = "John";\n        System.out.println("Hello, " + name);\n    }\n}',
-                solution: /String\s+name\s*=\s*["'].+["']\s*;\s*\n\s*System\.out\.println\s*\(\s*["']Hello,?\s*["']\s*\+\s*name\s*\)/,
+                starterCode: '// Strings use double quotes\n\npublic class Main {\n    public static void main(String[] args) {\n        // Create name and print "Hello, " + name\n        \n    }\n}',
+                solution: /String\s+name\s*=\s*["'].+["'][\s\S]*System\.out\.println\s*\([\s\S]*name/,
                 hints: ['String starts with capital S', 'Use + for concatenation', 'Strings use double quotes only']
             },
             {
@@ -1248,8 +1361,8 @@
                 title: 'Variables & Constants',
                 description: 'Declare variables and constants',
                 task: 'Create a constant <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">PI</code> with value 3.14159 using the final keyword.',
-                starterCode: '// final makes a variable constant\n\npublic class Main {\n    public static void main(String[] args) {\n        final double PI = 3.14159;\n        System.out.println(PI);\n    }\n}',
-                solution: /final\s+double\s+PI\s*=\s*3\.14159\s*;/,
+                starterCode: '// final makes a variable constant\n\npublic class Main {\n    public static void main(String[] args) {\n        // Create a constant PI = 3.14159\n        \n    }\n}',
+                solution: /final\s+double\s+PI\s*=\s*3\.14159/,
                 hints: ['final keyword creates constants', 'Constants are usually UPPERCASE', 'final variables cannot be changed']
             },
             {
@@ -1257,8 +1370,8 @@
                 title: 'If/Else Statements',
                 description: 'Control flow with conditionals',
                 task: 'Write an if/else that checks if score >= 60 and prints "Pass" or "Fail".',
-                starterCode: '// Java uses curly braces for blocks\n\npublic class Main {\n    public static void main(String[] args) {\n        int score = 75;\n        \n        if (score >= 60) {\n            System.out.println("Pass");\n        } else {\n            System.out.println("Fail");\n        }\n    }\n}',
-                solution: /if\s*\(\s*score\s*>=\s*60\s*\)\s*\{\s*\n?\s*System\.out\.println\s*\(\s*["']Pass["']\s*\)[\s\S]*\}\s*else\s*\{\s*\n?\s*System\.out\.println\s*\(\s*["']Fail["']\s*\)/,
+                starterCode: '// Java uses curly braces for blocks\n\npublic class Main {\n    public static void main(String[] args) {\n        int score = 75;\n        \n        // Write if/else for Pass/Fail\n        \n    }\n}',
+                solution: /if\s*\(\s*score\s*>=\s*60\s*\)[\s\S]*System\.out\.println\s*\(\s*["']Pass["']\s*\)[\s\S]*else[\s\S]*System\.out\.println\s*\(\s*["']Fail["']\s*\)/,
                 hints: ['Condition goes in parentheses', 'Use curly braces for blocks', 'else handles the false case']
             },
             {
@@ -1266,8 +1379,8 @@
                 title: 'Switch Statements',
                 description: 'Handle multiple cases efficiently',
                 task: 'Create a switch statement for a day number (1-7) that prints the day name for case 1 (Monday).',
-                starterCode: '// Switch for multiple conditions\n\npublic class Main {\n    public static void main(String[] args) {\n        int day = 1;\n        \n        switch (day) {\n            case 1:\n                System.out.println("Monday");\n                break;\n            default:\n                System.out.println("Other day");\n        }\n    }\n}',
-                solution: /switch\s*\(\s*day\s*\)\s*\{[\s\S]*case\s+1\s*:[\s\S]*System\.out\.println\s*\(\s*["']Monday["']\s*\)[\s\S]*break\s*;/,
+                starterCode: '// Switch for multiple conditions\n\npublic class Main {\n    public static void main(String[] args) {\n        int day = 1;\n        \n        // Create switch for day names\n        \n    }\n}',
+                solution: /switch\s*\(\s*day\s*\)[\s\S]*case\s+1\s*:[\s\S]*System\.out\.println\s*\(\s*["']Monday["']\s*\)[\s\S]*break/,
                 hints: ['switch matches value to cases', 'break prevents fall-through', 'default handles unmatched values']
             },
             {
@@ -1275,8 +1388,8 @@
                 title: 'For Loops',
                 description: 'Iterate a specific number of times',
                 task: 'Use a for loop to print numbers 1 through 5.',
-                starterCode: '// for (init; condition; increment)\n\npublic class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i <= 5; i++) {\n            System.out.println(i);\n        }\n    }\n}',
-                solution: /for\s*\(\s*int\s+\w+\s*=\s*1\s*;\s*\w+\s*<=\s*5\s*;\s*\w+\+\+\s*\)\s*\{\s*\n?\s*System\.out\.println\s*\(\s*\w+\s*\)/,
+                starterCode: '// for (init; condition; increment)\n\npublic class Main {\n    public static void main(String[] args) {\n        // Print 1 to 5 using a for loop\n        \n    }\n}',
+                solution: /for\s*\(\s*int\s+\w+\s*=\s*1\s*;\s*\w+\s*<=\s*5\s*;\s*\w+\+\+\s*\)[\s\S]*System\.out\.println\s*\(\s*\w+\s*\)/,
                 hints: ['Start: int i = 1', 'Condition: i <= 5', 'Increment: i++']
             },
             {
@@ -1284,8 +1397,8 @@
                 title: 'While Loops',
                 description: 'Loop while condition is true',
                 task: 'Use a while loop to print numbers 1 to 5.',
-                starterCode: '// while (condition) { }\n\npublic class Main {\n    public static void main(String[] args) {\n        int i = 1;\n        while (i <= 5) {\n            System.out.println(i);\n            i++;\n        }\n    }\n}',
-                solution: /while\s*\(\s*\w+\s*<=\s*5\s*\)\s*\{\s*\n?\s*System\.out\.println\s*\(\s*\w+\s*\)\s*;\s*\n?\s*\w+\+\+\s*;/,
+                starterCode: '// while (condition) { }\n\npublic class Main {\n    public static void main(String[] args) {\n        int i = 1;\n        \n        // Print 1 to 5 using while loop\n        \n    }\n}',
+                solution: /while\s*\(\s*\w+\s*<=\s*5\s*\)[\s\S]*System\.out\.println\s*\(\s*\w+\s*\)[\s\S]*\w+\+\+/,
                 hints: ['Initialize counter before loop', 'Check condition each iteration', 'Don\'t forget to increment!']
             },
             {
@@ -1293,8 +1406,8 @@
                 title: 'Arrays',
                 description: 'Store fixed-size collections',
                 task: 'Create a String array with 3 fruit names and print the first one.',
-                starterCode: '// Arrays have fixed size\n\npublic class Main {\n    public static void main(String[] args) {\n        String[] fruits = {"apple", "banana", "cherry"};\n        System.out.println(fruits[0]);\n    }\n}',
-                solution: /String\s*\[\s*\]\s*fruits\s*=\s*\{.*["']apple["'].*,.*["']banana["'].*,.*["']cherry["'].*\}\s*;\s*\n?\s*System\.out\.println\s*\(\s*fruits\s*\[\s*0\s*\]\s*\)/,
+                starterCode: '// Arrays have fixed size\n\npublic class Main {\n    public static void main(String[] args) {\n        // Create fruits array and print first element\n        \n    }\n}',
+                solution: /String\s*\[\s*\]\s*\w+\s*=\s*\{[\s\S]*\}[\s\S]*System\.out\.println\s*\(\s*\w+\s*\[\s*0\s*\]\s*\)/,
                 hints: ['Type[] name = {values}', 'Index starts at 0', 'Access with array[index]']
             },
             {
@@ -1302,8 +1415,8 @@
                 title: 'Methods',
                 description: 'Create reusable code blocks',
                 task: 'Create a static method <code class="code-font bg-gray-700 px-1.5 py-0.5 rounded">greet</code> that takes a String name and returns "Hello, " + name.',
-                starterCode: '// Methods define reusable behavior\n\npublic class Main {\n    public static String greet(String name) {\n        return "Hello, " + name;\n    }\n    \n    public static void main(String[] args) {\n        System.out.println(greet("World"));\n    }\n}',
-                solution: /public\s+static\s+String\s+greet\s*\(\s*String\s+name\s*\)\s*\{\s*\n?\s*return\s+["']Hello,?\s*["']\s*\+\s*name\s*;/,
+                starterCode: '// Methods define reusable behavior\n\npublic class Main {\n    // Create the greet method here\n    \n    \n    public static void main(String[] args) {\n        System.out.println(greet("World"));\n    }\n}',
+                solution: /public\s+static\s+String\s+greet\s*\(\s*String\s+\w+\s*\)[\s\S]*return\s+["']Hello,?\s*["']\s*\+\s*\w+/,
                 hints: ['Specify return type', 'Parameters need types', 'return sends back value']
             },
             {
@@ -1311,7 +1424,7 @@
                 title: 'Method Overloading',
                 description: 'Create methods with same name, different parameters',
                 task: 'Create two add methods: one for two ints, one for three ints.',
-                starterCode: '// Same name, different parameters\n\npublic class Main {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n    \n    public static int add(int a, int b, int c) {\n        return a + b + c;\n    }\n    \n    public static void main(String[] args) {\n        System.out.println(add(1, 2));\n        System.out.println(add(1, 2, 3));\n    }\n}',
+                starterCode: '// Same name, different parameters\n\npublic class Main {\n    // Create add(int a, int b)\n    \n    \n    // Create add(int a, int b, int c)\n    \n    \n    public static void main(String[] args) {\n        System.out.println(add(1, 2));\n        System.out.println(add(1, 2, 3));\n    }\n}',
                 solution: /public\s+static\s+int\s+add\s*\(\s*int\s+\w+\s*,\s*int\s+\w+\s*\)[\s\S]*public\s+static\s+int\s+add\s*\(\s*int\s+\w+\s*,\s*int\s+\w+\s*,\s*int\s+\w+\s*\)/,
                 hints: ['Same method name allowed', 'Parameters must differ', 'Compiler picks correct version']
             },
@@ -1320,8 +1433,8 @@
                 title: 'Classes & Objects',
                 description: 'Create custom types',
                 task: 'Create a Dog class with a name field and bark() method that returns "Woof!".',
-                starterCode: '// Classes define blueprints\n\nclass Dog {\n    String name;\n    \n    public String bark() {\n        return "Woof!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog();\n        myDog.name = "Buddy";\n        System.out.println(myDog.bark());\n    }\n}',
-                solution: /class\s+Dog\s*\{\s*\n?\s*String\s+name\s*;[\s\S]*public\s+String\s+bark\s*\(\s*\)\s*\{\s*\n?\s*return\s+["']Woof!?["']\s*;/,
+                starterCode: '// Classes define blueprints\n\n// Create the Dog class here\n\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog();\n        myDog.name = "Buddy";\n        System.out.println(myDog.bark());\n    }\n}',
+                solution: /class\s+Dog\s*\{[\s\S]*String\s+name[\s\S]*public\s+String\s+bark\s*\(\s*\)[\s\S]*return\s+["']Woof!?["']/,
                 hints: ['class defines the blueprint', 'Fields store data', 'Methods define behavior']
             },
             {
@@ -1329,8 +1442,8 @@
                 title: 'Constructors',
                 description: 'Initialize objects properly',
                 task: 'Add a constructor to Dog that takes and sets the name.',
-                starterCode: '// Constructor initializes objects\n\nclass Dog {\n    String name;\n    \n    public Dog(String name) {\n        this.name = name;\n    }\n    \n    public String bark() {\n        return "Woof!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog("Buddy");\n        System.out.println(myDog.name);\n    }\n}',
-                solution: /public\s+Dog\s*\(\s*String\s+name\s*\)\s*\{\s*\n?\s*this\.name\s*=\s*name\s*;/,
+                starterCode: '// Constructor initializes objects\n\nclass Dog {\n    String name;\n    \n    // Add constructor that takes name\n    \n    \n    public String bark() {\n        return "Woof!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog("Buddy");\n        System.out.println(myDog.name);\n    }\n}',
+                solution: /public\s+Dog\s*\(\s*String\s+\w+\s*\)[\s\S]*this\.name\s*=\s*\w+/,
                 hints: ['Constructor name = class name', 'No return type', 'this refers to current object']
             },
             {
@@ -1338,8 +1451,8 @@
                 title: 'Encapsulation',
                 description: 'Protect data with access modifiers',
                 task: 'Make name private and add getName() and setName() methods.',
-                starterCode: '// private + getters/setters\n\nclass Dog {\n    private String name;\n    \n    public String getName() {\n        return this.name;\n    }\n    \n    public void setName(String name) {\n        this.name = name;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog();\n        myDog.setName("Buddy");\n        System.out.println(myDog.getName());\n    }\n}',
-                solution: /private\s+String\s+name\s*;[\s\S]*public\s+String\s+getName\s*\(\s*\)[\s\S]*public\s+void\s+setName\s*\(\s*String\s+name\s*\)/,
+                starterCode: '// private + getters/setters\n\nclass Dog {\n    // Make name private and add getter/setter\n    \n    \n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog();\n        myDog.setName("Buddy");\n        System.out.println(myDog.getName());\n    }\n}',
+                solution: /private\s+String\s+name[\s\S]*public\s+String\s+getName\s*\(\s*\)[\s\S]*public\s+void\s+setName\s*\(\s*String/,
                 hints: ['private hides the field', 'Getter returns value', 'Setter updates value']
             },
             {
@@ -1347,8 +1460,8 @@
                 title: 'Inheritance',
                 description: 'Create class hierarchies',
                 task: 'Create a Puppy class that extends Dog and adds a play() method.',
-                starterCode: '// extends creates inheritance\n\nclass Dog {\n    public String bark() {\n        return "Woof!";\n    }\n}\n\nclass Puppy extends Dog {\n    public String play() {\n        return "Playing!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Puppy p = new Puppy();\n        System.out.println(p.bark());\n        System.out.println(p.play());\n    }\n}',
-                solution: /class\s+Puppy\s+extends\s+Dog\s*\{\s*\n?\s*public\s+String\s+play\s*\(\s*\)\s*\{\s*\n?\s*return\s+["']Playing!?["']/,
+                starterCode: '// extends creates inheritance\n\nclass Dog {\n    public String bark() {\n        return "Woof!";\n    }\n}\n\n// Create Puppy class that extends Dog\n\n\npublic class Main {\n    public static void main(String[] args) {\n        Puppy p = new Puppy();\n        System.out.println(p.bark());\n        System.out.println(p.play());\n    }\n}',
+                solution: /class\s+Puppy\s+extends\s+Dog[\s\S]*public\s+String\s+play\s*\(\s*\)[\s\S]*return\s+["']Playing!?["']/,
                 hints: ['extends creates inheritance', 'Child gets parent methods', 'Child can add new methods']
             },
             {
@@ -1356,8 +1469,8 @@
                 title: 'Polymorphism',
                 description: 'Override methods in subclasses',
                 task: 'Override the bark() method in Puppy to return "Yip!".',
-                starterCode: '// @Override for clarity\n\nclass Dog {\n    public String bark() {\n        return "Woof!";\n    }\n}\n\nclass Puppy extends Dog {\n    @Override\n    public String bark() {\n        return "Yip!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog d = new Puppy();\n        System.out.println(d.bark());\n    }\n}',
-                solution: /@Override\s*\n?\s*public\s+String\s+bark\s*\(\s*\)\s*\{\s*\n?\s*return\s+["']Yip!?["']/,
+                starterCode: '// @Override for clarity\n\nclass Dog {\n    public String bark() {\n        return "Woof!";\n    }\n}\n\nclass Puppy extends Dog {\n    // Override bark() to return "Yip!"\n    \n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog d = new Puppy();\n        System.out.println(d.bark());\n    }\n}',
+                solution: /@Override[\s\S]*public\s+String\s+bark\s*\(\s*\)[\s\S]*return\s+["']Yip!?["']/,
                 hints: ['@Override is optional but helpful', 'Same method signature required', 'Child version is called']
             },
             {
@@ -1365,8 +1478,8 @@
                 title: 'Interfaces',
                 description: 'Define contracts for classes',
                 task: 'Create an interface Speakable with a speak() method, implement it in Dog.',
-                starterCode: '// interface defines contract\n\ninterface Speakable {\n    String speak();\n}\n\nclass Dog implements Speakable {\n    public String speak() {\n        return "Woof!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Speakable s = new Dog();\n        System.out.println(s.speak());\n    }\n}',
-                solution: /interface\s+Speakable\s*\{\s*\n?\s*String\s+speak\s*\(\s*\)\s*;[\s\S]*class\s+Dog\s+implements\s+Speakable/,
+                starterCode: '// interface defines contract\n\n// Create Speakable interface\n\n\n// Create Dog class that implements Speakable\n\n\npublic class Main {\n    public static void main(String[] args) {\n        Speakable s = new Dog();\n        System.out.println(s.speak());\n    }\n}',
+                solution: /interface\s+Speakable[\s\S]*String\s+speak\s*\(\s*\)[\s\S]*class\s+Dog\s+implements\s+Speakable/,
                 hints: ['interface defines methods without body', 'implements to use interface', 'Must implement all methods']
             },
             {
@@ -1374,8 +1487,8 @@
                 title: 'Abstract Classes',
                 description: 'Create partially implemented classes',
                 task: 'Create an abstract class Animal with abstract speak() method.',
-                starterCode: '// abstract = partial implementation\n\nabstract class Animal {\n    public abstract String speak();\n    \n    public void sleep() {\n        System.out.println("Zzz...");\n    }\n}\n\nclass Dog extends Animal {\n    public String speak() {\n        return "Woof!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        System.out.println(a.speak());\n    }\n}',
-                solution: /abstract\s+class\s+Animal\s*\{[\s\S]*public\s+abstract\s+String\s+speak\s*\(\s*\)\s*;/,
+                starterCode: '// abstract = partial implementation\n\n// Create abstract Animal class\n\n\nclass Dog extends Animal {\n    public String speak() {\n        return "Woof!";\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        System.out.println(a.speak());\n    }\n}',
+                solution: /abstract\s+class\s+Animal[\s\S]*public\s+abstract\s+String\s+speak\s*\(\s*\)/,
                 hints: ['abstract class can\'t be instantiated', 'abstract methods have no body', 'Subclasses must implement them']
             },
             {
@@ -1383,8 +1496,8 @@
                 title: 'ArrayList & HashMap',
                 description: 'Use dynamic collections',
                 task: 'Create an ArrayList of Strings and add three names to it.',
-                starterCode: '// ArrayList grows dynamically\n\nimport java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> names = new ArrayList<>();\n        names.add("Alice");\n        names.add("Bob");\n        names.add("Charlie");\n        System.out.println(names);\n    }\n}',
-                solution: /ArrayList<String>\s+\w+\s*=\s*new\s+ArrayList<>\s*\(\s*\)\s*;[\s\S]*\.add\s*\([\s\S]*\.add\s*\([\s\S]*\.add\s*\(/,
+                starterCode: '// ArrayList grows dynamically\n\nimport java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Create ArrayList and add 3 names\n        \n    }\n}',
+                solution: /ArrayList<String>\s+\w+\s*=\s*new\s+ArrayList[\s\S]*\.add\s*\([\s\S]*\.add\s*\([\s\S]*\.add\s*\(/,
                 hints: ['ArrayList<Type> for type safety', 'new ArrayList<>() creates it', '.add() appends elements']
             },
             {
@@ -1392,8 +1505,8 @@
                 title: 'Try/Catch & Exceptions',
                 description: 'Handle errors gracefully',
                 task: 'Use try/catch to handle a potential ArithmeticException when dividing by zero.',
-                starterCode: '// try/catch handles exceptions\n\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            int result = 10 / 0;\n        } catch (ArithmeticException e) {\n            System.out.println("Cannot divide by zero!");\n        }\n    }\n}',
-                solution: /try\s*\{\s*\n?\s*int\s+result\s*=\s*10\s*\/\s*0\s*;[\s\S]*\}\s*catch\s*\(\s*ArithmeticException\s+\w+\s*\)\s*\{\s*\n?\s*System\.out\.println\s*\(\s*["']Cannot divide by zero!?["']\s*\)/,
+                starterCode: '// try/catch handles exceptions\n\npublic class Main {\n    public static void main(String[] args) {\n        // Try dividing by zero and catch the error\n        \n    }\n}',
+                solution: /try[\s\S]*10\s*\/\s*0[\s\S]*catch\s*\(\s*(ArithmeticException|Exception)\s+\w+\s*\)[\s\S]*System\.out\.println\s*\(\s*["']Cannot divide by zero!?["']\s*\)/,
                 hints: ['try contains risky code', 'catch handles specific exception', 'e contains error details']
             }
         ];
@@ -2276,6 +2389,332 @@
         }
         
         // ============================================
+        // DEBUG ASSISTANT - Analyzes and fixes code
+        // ============================================
+        let currentFixedCode = '';
+        
+        function showDebugAssistant() {
+            const code = AppState.editor ? AppState.editor.getValue() : '';
+            const lesson = curriculum[AppState.currentLanguage].lessons[AppState.currentLessonIndex];
+            const debugContent = document.getElementById('debug-content');
+            
+            // Analyze the code and generate fix
+            const analysis = analyzeAndFixCode(code, lesson, AppState.currentLanguage);
+            currentFixedCode = analysis.fixedCode;
+            
+            let html = '';
+            
+            // Problem Detection Section
+            html += `
+                <div class="bg-red-900/30 border border-red-700 rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                        <h4 class="font-semibold text-red-400">Problems Detected</h4>
+                    </div>
+                    <ul class="space-y-1 text-sm text-gray-300">
+                        ${analysis.problems.map(p => `<li class="flex items-start gap-2"><span class="text-red-400">•</span> ${escapeHtml(p)}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            
+            // Step-by-Step Fix Section
+            html += `
+                <div class="bg-blue-900/30 border border-blue-700 rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        </svg>
+                        <h4 class="font-semibold text-blue-400">Step-by-Step Fix</h4>
+                    </div>
+                    <ol class="space-y-3">
+                        ${analysis.steps.map((step, i) => `
+                            <li class="flex items-start gap-3">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">${i + 1}</div>
+                                <div class="text-sm text-gray-200">${escapeHtml(step)}</div>
+                            </li>
+                        `).join('')}
+                    </ol>
+                </div>
+            `;
+            
+            // Fixed Code Preview Section
+            html += `
+                <div class="bg-green-900/30 border border-green-700 rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-3">
+                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h4 class="font-semibold text-green-400">Fixed Code</h4>
+                    </div>
+                    <pre class="bg-gray-900 rounded-lg p-3 overflow-x-auto text-sm"><code class="code-font text-gray-200">${escapeHtml(analysis.fixedCode)}</code></pre>
+                </div>
+            `;
+            
+            // Explanation Section
+            html += `
+                <div class="bg-purple-900/30 border border-purple-700 rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h4 class="font-semibold text-purple-400">Why This Works</h4>
+                    </div>
+                    <p class="text-sm text-gray-300">${escapeHtml(analysis.explanation)}</p>
+                </div>
+            `;
+            
+            debugContent.innerHTML = html;
+            document.getElementById('debug-modal').classList.remove('hidden');
+        }
+        
+        function hideDebugAssistant() {
+            document.getElementById('debug-modal').classList.add('hidden');
+        }
+        
+        function applyFix() {
+            if (currentFixedCode && AppState.editor) {
+                AppState.editor.setValue(currentFixedCode);
+                hideDebugAssistant();
+                showNotification('Fix applied! Click Run to test your code.');
+            }
+        }
+        
+        function analyzeAndFixCode(code, lesson, language) {
+            const problems = [];
+            const steps = [];
+            let fixedCode = '';
+            let explanation = '';
+            
+            // Get the lesson-specific solution patterns and generate appropriate fix
+            const lessonId = lesson.id;
+            
+            // Analyze based on language and lesson
+            if (language === 'python') {
+                const result = analyzePythonCode(code, lesson);
+                problems.push(...result.problems);
+                steps.push(...result.steps);
+                fixedCode = result.fixedCode;
+                explanation = result.explanation;
+            } else if (language === 'javascript') {
+                const result = analyzeJavaScriptCode(code, lesson);
+                problems.push(...result.problems);
+                steps.push(...result.steps);
+                fixedCode = result.fixedCode;
+                explanation = result.explanation;
+            } else if (language === 'java') {
+                const result = analyzeJavaCode(code, lesson);
+                problems.push(...result.problems);
+                steps.push(...result.steps);
+                fixedCode = result.fixedCode;
+                explanation = result.explanation;
+            }
+            
+            return { problems, steps, fixedCode, explanation };
+        }
+        
+        function analyzePythonCode(code, lesson) {
+            const problems = [];
+            const steps = [];
+            let fixedCode = '';
+            let explanation = '';
+            
+            // Check for common Python issues
+            const hasIndentationIssue = code.match(/^(if|elif|else|for|while|def|class|try|except|with)\b.*:[ \t]*\n[^ \t]/m);
+            const hasMissingColon = code.match(/^(if|elif|else|for|while|def|class|try|except)\b[^:]*$/m);
+            const hasUnclosedString = (code.match(/"/g) || []).length % 2 !== 0 || (code.match(/'/g) || []).length % 2 !== 0;
+            const hasUnclosedParen = (code.match(/\(/g) || []).length !== (code.match(/\)/g) || []).length;
+            const hasUnclosedBracket = (code.match(/\[/g) || []).length !== (code.match(/\]/g) || []).length;
+            
+            // Generate lesson-specific fixes
+            switch(lesson.id) {
+                case 'py-1': // Variables
+                    problems.push('Missing or incomplete variable declarations');
+                    if (!code.match(/name\s*=\s*["'].+["']/)) problems.push('Variable "name" needs a string value');
+                    if (!code.match(/age\s*=\s*\d+/)) problems.push('Variable "age" needs a number value');
+                    steps.push('Create a variable called "name" and assign a string value (in quotes)');
+                    steps.push('Create a variable called "age" and assign a number (no quotes)');
+                    steps.push('Make sure each variable is on its own line');
+                    fixedCode = '# Python uses simple variable assignment\n# Strings use quotes, numbers don\'t\n\n# Create your variables below:\nname = "Alex"\nage = 25';
+                    explanation = 'In Python, variables are created using the = operator. Strings must be wrapped in quotes (single or double), while numbers are written without quotes. Variable names should be descriptive and lowercase.';
+                    break;
+                case 'py-2': // Print
+                    problems.push('Missing or incorrect print statement');
+                    if (!code.match(/print\s*\(/)) problems.push('Need to use the print() function');
+                    if (!code.match(/Hello,?\s*World!?/i)) problems.push('The text should be "Hello, World!"');
+                    steps.push('Use the print() function to display output');
+                    steps.push('Put the text "Hello, World!" inside the parentheses');
+                    steps.push('Make sure the text is wrapped in quotes');
+                    fixedCode = '# The print() function displays text to the console\n# Text must be wrapped in quotes\n\n# Print Hello, World! below:\nprint("Hello, World!")';
+                    explanation = 'The print() function outputs text to the console. The text you want to display must be a string, which means it needs to be wrapped in quotes.';
+                    break;
+                case 'py-3': // Indentation
+                    problems.push('Indentation or conditional structure issue');
+                    if (hasMissingColon) problems.push('Missing colon after if statement');
+                    if (hasIndentationIssue) problems.push('Code inside if block needs to be indented');
+                    steps.push('Write an if statement: if x > 5:');
+                    steps.push('Add a colon (:) at the end of the condition');
+                    steps.push('Indent the print statement with 4 spaces');
+                    steps.push('Print "Big number" inside the if block');
+                    fixedCode = '# Python uses indentation (4 spaces) to define code blocks\n# No curly braces needed!\n\nx = 10\n\n# Write your if statement with proper indentation:\nif x > 5:\n    print("Big number")';
+                    explanation = 'Python uses indentation (typically 4 spaces) to define code blocks instead of curly braces. The colon (:) after the condition is required and tells Python that an indented block follows.';
+                    break;
+                case 'py-4': // If/Else
+                    problems.push('If/else structure incomplete');
+                    steps.push('Write if score >= 60: to check the condition');
+                    steps.push('Indent and print "Pass" inside the if block');
+                    steps.push('Add else: on a new line (no indent)');
+                    steps.push('Indent and print "Fail" inside the else block');
+                    fixedCode = '# If/else lets you handle both conditions\n\nscore = 75\n\n# Write your if/else statement:\nif score >= 60:\n    print("Pass")\nelse:\n    print("Fail")';
+                    explanation = 'If/else statements let you execute different code based on a condition. If the condition is True, the if block runs. Otherwise, the else block runs. Both blocks need proper indentation.';
+                    break;
+                case 'py-5': // Elif
+                    problems.push('Grading system incomplete');
+                    steps.push('Start with if score >= 90: and print "A"');
+                    steps.push('Add elif score >= 80: and print "B"');
+                    steps.push('Add elif score >= 70: and print "C"');
+                    steps.push('Add else: and print "F"');
+                    fixedCode = '# Use elif for multiple conditions\n\nscore = 85\n\n# Create the grading system:\nif score >= 90:\n    print("A")\nelif score >= 80:\n    print("B")\nelif score >= 70:\n    print("C")\nelse:\n    print("F")';
+                    explanation = 'Use elif (else if) to check multiple conditions in sequence. Python checks each condition from top to bottom and executes the first matching block. Order matters - check for the highest grade first!';
+                    break;
+                case 'py-6': // Lists
+                    problems.push('List not created correctly');
+                    steps.push('Create a variable called "fruits"');
+                    steps.push('Use square brackets [] to create a list');
+                    steps.push('Add "apple", "banana", "orange" separated by commas');
+                    steps.push('Each string needs its own quotes');
+                    fixedCode = '# Lists use square brackets []\n# Items are separated by commas\n\n# Create your fruits list:\nfruits = ["apple", "banana", "orange"]';
+                    explanation = 'Lists in Python are created using square brackets []. Items are separated by commas, and string items need to be in quotes. Lists can hold any type of data and can be modified after creation.';
+                    break;
+                default:
+                    problems.push('Code does not match expected solution');
+                    steps.push('Review the task description carefully');
+                    steps.push('Check the hints for guidance');
+                    steps.push('Make sure your syntax is correct');
+                    fixedCode = lesson.starterCode;
+                    explanation = 'Make sure to follow the task requirements exactly. Use the hints for additional guidance on what\'s expected.';
+            }
+            
+            return { problems, steps, fixedCode, explanation };
+        }
+        
+        function analyzeJavaScriptCode(code, lesson) {
+            const problems = [];
+            const steps = [];
+            let fixedCode = '';
+            let explanation = '';
+            
+            switch(lesson.id) {
+                case 'js-1': // Variables
+                    problems.push('Missing or incorrect variable declarations');
+                    if (!code.match(/let\s+name\s*=/)) problems.push('Need to declare "name" with let');
+                    if (!code.match(/const\s+age\s*=/)) problems.push('Need to declare "age" with const');
+                    steps.push('Use "let" to declare a variable that can change');
+                    steps.push('Assign a string value to name (in quotes)');
+                    steps.push('Use "const" to declare a constant');
+                    steps.push('Assign a number to age (no quotes)');
+                    fixedCode = '// let = can be reassigned\n// const = cannot be reassigned\n\n// Create your variables below:\nlet name = "Alex";\nconst age = 25;';
+                    explanation = 'JavaScript uses "let" for variables that might change and "const" for constants. Strings need quotes, numbers don\'t. Semicolons are optional but recommended.';
+                    break;
+                case 'js-2': // Console
+                    problems.push('Missing or incorrect console.log statement');
+                    steps.push('Use console.log() to output to the console');
+                    steps.push('Put "Hello, World!" inside the parentheses');
+                    steps.push('Make sure the text is in quotes');
+                    fixedCode = '// console.log() outputs to the browser console\n\n// Log Hello, World! below:\nconsole.log("Hello, World!");';
+                    explanation = 'console.log() is JavaScript\'s primary way to output data to the browser console. It\'s essential for debugging and displaying information.';
+                    break;
+                case 'js-3': // Math
+                    problems.push('Math operation or logging incorrect');
+                    steps.push('Create a variable called "sum"');
+                    steps.push('Assign it the value of 10 + 5');
+                    steps.push('Use console.log to display the sum');
+                    fixedCode = '// JavaScript supports +, -, *, /, %\n\n// Create sum and log it:\nconst sum = 10 + 5;\nconsole.log(sum);';
+                    explanation = 'JavaScript supports standard math operators: + (add), - (subtract), * (multiply), / (divide), % (modulo). Store results in variables for later use.';
+                    break;
+                case 'js-4': // Strings
+                    problems.push('String method not used correctly');
+                    steps.push('Create a variable "message" with value "hello"');
+                    steps.push('Use .toUpperCase() to convert to uppercase');
+                    steps.push('Log the result with console.log()');
+                    fixedCode = '// Strings have many built-in methods\n\n// Create message and log its uppercase version:\nconst message = "hello";\nconsole.log(message.toUpperCase());';
+                    explanation = 'Strings have built-in methods like .toUpperCase(), .toLowerCase(), .trim(), etc. These methods return a new string - they don\'t modify the original.';
+                    break;
+                case 'js-5': // If/Else
+                    problems.push('If/else statement structure incorrect');
+                    steps.push('Write if (score >= 60) with curly braces');
+                    steps.push('Log "Pass" inside the if block');
+                    steps.push('Add else with curly braces');
+                    steps.push('Log "Fail" inside the else block');
+                    fixedCode = '// Use curly braces {} for code blocks\n\nconst score = 75;\n\n// Write your if/else:\nif (score >= 60) {\n    console.log("Pass");\n} else {\n    console.log("Fail");\n}';
+                    explanation = 'JavaScript if/else uses parentheses for conditions and curly braces for code blocks. The condition is evaluated as true or false.';
+                    break;
+                default:
+                    problems.push('Code does not match expected solution');
+                    steps.push('Review the task description');
+                    steps.push('Check the syntax carefully');
+                    fixedCode = lesson.starterCode;
+                    explanation = 'Follow the task requirements and check the hints for guidance.';
+            }
+            
+            return { problems, steps, fixedCode, explanation };
+        }
+        
+        function analyzeJavaCode(code, lesson) {
+            const problems = [];
+            const steps = [];
+            let fixedCode = '';
+            let explanation = '';
+            
+            switch(lesson.id) {
+                case 'java-1': // Hello World
+                    problems.push('Main method or print statement incorrect');
+                    steps.push('Create the main method: public static void main(String[] args)');
+                    steps.push('Add curly braces { } for the method body');
+                    steps.push('Use System.out.println("Hello, World!");');
+                    steps.push('Don\'t forget the semicolon at the end');
+                    fixedCode = '// Every Java program needs a main method\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}';
+                    explanation = 'Every Java program starts with the main method. System.out.println() prints text and adds a new line. All statements end with semicolons.';
+                    break;
+                case 'java-2': // Data Types
+                    problems.push('Variable declarations incomplete or incorrect');
+                    steps.push('Declare int age = (number);');
+                    steps.push('Declare double price = (decimal number);');
+                    steps.push('Declare boolean isActive = true or false;');
+                    steps.push('Each declaration ends with a semicolon');
+                    fixedCode = '// Java is strongly typed\n\npublic class Main {\n    public static void main(String[] args) {\n        int age = 25;\n        double price = 19.99;\n        boolean isActive = true;\n    }\n}';
+                    explanation = 'Java is strongly typed - you must declare the type of each variable. int for whole numbers, double for decimals, boolean for true/false.';
+                    break;
+                case 'java-3': // Strings
+                    problems.push('String declaration or concatenation incorrect');
+                    steps.push('Declare String name = "your name";');
+                    steps.push('Use + to concatenate strings');
+                    steps.push('Print with System.out.println()');
+                    fixedCode = '// Strings use double quotes\n\npublic class Main {\n    public static void main(String[] args) {\n        String name = "Alex";\n        System.out.println("Hello, " + name);\n    }\n}';
+                    explanation = 'In Java, String is a class (capital S). Strings use double quotes only. Use + to concatenate strings together.';
+                    break;
+                case 'java-5': // If/Else
+                    problems.push('If/else structure incorrect');
+                    steps.push('Write if (score >= 60) with parentheses');
+                    steps.push('Add curly braces for the if block');
+                    steps.push('Print "Pass" inside the if block');
+                    steps.push('Add else with curly braces and print "Fail"');
+                    fixedCode = '// Java uses curly braces for blocks\n\npublic class Main {\n    public static void main(String[] args) {\n        int score = 75;\n        \n        if (score >= 60) {\n            System.out.println("Pass");\n        } else {\n            System.out.println("Fail");\n        }\n    }\n}';
+                    explanation = 'Java if/else uses parentheses for conditions and curly braces for code blocks. Each statement inside ends with a semicolon.';
+                    break;
+                default:
+                    problems.push('Code does not match expected solution');
+                    steps.push('Review the task description');
+                    steps.push('Check Java syntax (semicolons, braces, types)');
+                    fixedCode = lesson.starterCode;
+                    explanation = 'Follow the task requirements and ensure proper Java syntax.';
+            }
+            
+            return { problems, steps, fixedCode, explanation };
+        }
+        
+        // ============================================
         // SHARE & COPY FUNCTIONALITY
         // ============================================
         function getLessonShareUrl() {
@@ -2471,55 +2910,6 @@
             
             // Next button - only enable if unlocked
             nextBtn.disabled = AppState.currentLessonIndex >= maxIndex || AppState.currentLessonIndex >= progress.current;
-            
-            // Update mark complete button
-            updateMarkCompleteButton();
-        }
-        
-        function updateMarkCompleteButton() {
-            const btn = document.getElementById('mark-complete-btn');
-            const textSpan = document.getElementById('complete-btn-text');
-            const lesson = curriculum[AppState.currentLanguage].lessons[AppState.currentLessonIndex];
-            const progress = AppState.progress[AppState.currentLanguage];
-            const isCompleted = progress.completed.includes(lesson.id);
-            
-            if (isCompleted) {
-                btn.classList.add('completed');
-                textSpan.textContent = 'Completed';
-            } else {
-                btn.classList.remove('completed');
-                textSpan.textContent = 'Mark Complete';
-            }
-        }
-        
-        function toggleMarkComplete() {
-            const lesson = curriculum[AppState.currentLanguage].lessons[AppState.currentLessonIndex];
-            const progress = AppState.progress[AppState.currentLanguage];
-            const isCompleted = progress.completed.includes(lesson.id);
-            
-            if (isCompleted) {
-                // Remove from completed
-                progress.completed = progress.completed.filter(id => id !== lesson.id);
-                showNotification('Lesson unmarked');
-            } else {
-                // Add to completed
-                progress.completed.push(lesson.id);
-                
-                // Unlock next lesson if needed
-                if (AppState.currentLessonIndex >= progress.current) {
-                    progress.current = Math.min(
-                        AppState.currentLessonIndex + 1,
-                        curriculum[AppState.currentLanguage].lessons.length - 1
-                    );
-                }
-                showNotification('Lesson marked as complete!');
-            }
-            
-            saveProgress();
-            renderLessonsList();
-            updateMarkCompleteButton();
-            updateProgressDisplay();
-            updateLessonNavButtons();
         }
         
         // ============================================
@@ -2750,13 +3140,28 @@
                 if (e.target.id === 'hints-modal') hideHints();
             });
             
+            // Fix It / Debug Assistant button
+            document.getElementById('fix-it-btn').addEventListener('click', showDebugAssistant);
+            document.getElementById('close-debug-btn').addEventListener('click', hideDebugAssistant);
+            document.getElementById('close-debug-btn-bottom').addEventListener('click', hideDebugAssistant);
+            document.getElementById('apply-fix-btn').addEventListener('click', applyFix);
+            document.getElementById('debug-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'debug-modal') hideDebugAssistant();
+            });
+            
             // Lesson navigation
             document.getElementById('prev-lesson-btn').addEventListener('click', goToPreviousLesson);
             document.getElementById('next-lesson-btn').addEventListener('click', goToNextLesson);
             
             // Share functionality
-            document.getElementById('share-btn').addEventListener('click', shareLesson);
-            document.getElementById('copy-link-btn').addEventListener('click', copyLessonLink);
+            document.getElementById('share-btn').addEventListener('click', () => {
+                document.getElementById('settings-dropdown').classList.add('hidden');
+                shareLesson();
+            });
+            document.getElementById('copy-link-btn').addEventListener('click', () => {
+                document.getElementById('settings-dropdown').classList.add('hidden');
+                copyLessonLink();
+            });
             document.getElementById('close-share-btn').addEventListener('click', hideShareModal);
             document.getElementById('copy-share-url').addEventListener('click', copyShareUrl);
             document.getElementById('share-twitter').addEventListener('click', shareToTwitter);
@@ -2770,8 +3175,41 @@
                 if (e.target.id === 'share-modal') hideShareModal();
             });
             
-            // Mark complete button
-            document.getElementById('mark-complete-btn').addEventListener('click', toggleMarkComplete);
+            // Settings dropdown
+            const settingsBtn = document.getElementById('settings-btn');
+            const settingsDropdown = document.getElementById('settings-dropdown');
+            
+            settingsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                settingsDropdown.classList.toggle('hidden');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!settingsBtn.contains(e.target) && !settingsDropdown.contains(e.target)) {
+                    settingsDropdown.classList.add('hidden');
+                }
+            });
+            
+            // Keyboard shortcuts modal
+            document.getElementById('keyboard-shortcuts-btn').addEventListener('click', () => {
+                settingsDropdown.classList.add('hidden');
+                document.getElementById('shortcuts-modal').classList.remove('hidden');
+            });
+            
+            document.getElementById('close-shortcuts-btn').addEventListener('click', () => {
+                document.getElementById('shortcuts-modal').classList.add('hidden');
+            });
+            
+            document.getElementById('close-shortcuts-btn-bottom').addEventListener('click', () => {
+                document.getElementById('shortcuts-modal').classList.add('hidden');
+            });
+            
+            document.getElementById('shortcuts-modal').addEventListener('click', (e) => {
+                if (e.target.id === 'shortcuts-modal') {
+                    document.getElementById('shortcuts-modal').classList.add('hidden');
+                }
+            });
             
             // Clear output
             document.getElementById('clear-output').addEventListener('click', () => {
@@ -2809,6 +3247,9 @@
                     } else if (e.key === 's') {
                         e.preventDefault();
                         submitCode();
+                    } else if (e.key === 'd') {
+                        e.preventDefault();
+                        toggleTheme();
                     }
                 }
                 
